@@ -32,7 +32,7 @@ const Profile = ({ user, profileImage }) => {
   };
 
   return (
-    <div className="px-7">
+    <div className="px-7 mb-20">
       {/* pfp row */}
       <div className="flex flex-row justify-between">
         <ProfileButton profileImage={profileImage} />
@@ -79,10 +79,10 @@ const Profile = ({ user, profileImage }) => {
         />
         {/* Card 3 */}
         <ActionCard
-          title="Request a Call Back"
+          title="Request a Call"
           image={contact}
           direction="column"
-          cardStyling="py-4 px-5 justify-center gap-3 "
+          cardStyling="py-4 px-5 justify-center gap-3"
           textContainerStyle="max-w-20 break-words text-center"
         />
       </div>
@@ -135,7 +135,7 @@ const Profile = ({ user, profileImage }) => {
       {/* Languages */}
       <div className="mt-5">
         <div
-          className="card p-5 mt-3 flex flex-row gap-3"
+          className="card p-5 mt-3 flex flex-row gap-3 overflow-x-auto"
           style={{
             backgroundColor: "rgba(243, 245, 248, 1)",
             borderRadius: 15,

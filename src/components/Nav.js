@@ -58,16 +58,16 @@ const Nav = () => {
 
   return (
     <>
-      <div className="flex flex-col w-full">
+      <div className="px-5 flex flex-col w-full">
         <nav className="flex flex-row ">
-          <div className="hidden w-1/2 md:flex justify-around">
+          {/* <div className="hidden w-1/2 md:flex justify-around">
             <NavLinks />
           </div>
           <div className="md:hidden flex justify-center mx-5">
             <button onClick={toggleNav}>
               {isOpen ? <X /> : <img src={hamburger} alt="Menu" />}
             </button>
-          </div>
+          </div> */}
           <Logo />
         </nav>
         {isOpen && (

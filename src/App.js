@@ -14,6 +14,7 @@ import Register from "./pages/auth/Register";
 import { JAINAM_USER, VARUN_USER } from "./constants/profiles";
 import VarunProfilePic from "./assets/varun_profile.jpeg";
 import JainamProfilePic from "./assets/jainam_profile.jpeg";
+import Tabs from "./components/Tabs";
 
 function App() {
   // const { userLoggedIn } = useAuth();
@@ -38,10 +39,11 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/profile" element={<Profile user={VARUN_USER} />} />
+          <Route path="/profile" element={<Profile user={VARUN_USER} profileImage={VarunProfilePic} />} />
           <Route path="/profile/varun" element={<Profile user={VARUN_USER} profileImage={VarunProfilePic} />} />
           <Route path="/profile/jainam" element={<Profile user={JAINAM_USER} profileImage={JainamProfilePic} />} />
         </Routes>
+        <Tabs />
       </AuthProvider>
     </>
   );
