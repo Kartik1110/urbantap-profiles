@@ -150,9 +150,9 @@ const Tabs = () => {
           <li className="px-8">
             <Link to="/profile" className="block py-4 text-gray-800 hover:bg-gray-100">
               <HouseIcon
-                color={currentPath === "/profile" ? "#13ce66" : null}
+                color={currentPath.includes("/profile") ? "#13ce66" : null}
                 label="Home"
-                labelColor={currentPath === "/profile" ? "#0A1330" : null}
+                labelColor={currentPath.includes("/profile") ? "#0A1330" : null}
               />
             </Link>
           </li>
@@ -166,20 +166,20 @@ const Tabs = () => {
             </Link>
           </li>
           <li className="px-8">
-            <Link to="/jobs" className="flex flex-col justify-center items-center py-4 text-gray-800 hover:bg-gray-100">
-              <JobsIcon
-                color={currentPath === "/jobs" ? "#13ce66" : null}
-                label="Jobs"
-                labelColor={currentPath === "/jobs" ? "#0A1330" : null}
-              />
-            </Link>
-          </li>
-          <li className="px-8">
             <Link to="/listings" className="block py-4 text-gray-800 hover:bg-gray-100">
               <ListingsIcon
                 color={currentPath === "/listings" ? "#13ce66" : null}
                 label="Listings"
                 labelColor={currentPath === "/listings" ? "#0A1330" : null}
+              />
+            </Link>
+          </li>
+          <li className="px-8">
+            <Link to="/jobs" className="flex flex-col justify-center items-center py-4 text-gray-800 hover:bg-gray-100">
+              <JobsIcon
+                color={currentPath === "/jobs" ? "#13ce66" : null}
+                label="Jobs"
+                labelColor={currentPath === "/jobs" ? "#0A1330" : null}
               />
             </Link>
           </li>

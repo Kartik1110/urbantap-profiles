@@ -1,7 +1,13 @@
+import ListingsImg from "../assets/listings.png";
+import ListingsSearchImg from "../assets/listings-search.png";
+
 const Listings = () => {
   return (
-    <div className="w-full flex flex-col justify-center items-center">
-      <h1 className="text-2xl text-dark-blue">Listings page coming soon!!</h1>
+    <div className="mb-20">
+      <img className="pb-4" src={ListingsSearchImg} alt="brokers-list" />
+      <div className="w-full flex flex-col justify-center items-center">
+        {[Array.from({ length: 10 }).map((_, index) => <img src={ListingsImg} alt="brokers-list" />)]}
+      </div>
     </div>
   );
 };
