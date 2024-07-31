@@ -15,6 +15,9 @@ import { JAINAM_USER, VARUN_USER } from "./constants/profiles";
 import VarunProfilePic from "./assets/varun_profile.jpeg";
 import JainamProfilePic from "./assets/jainam_profile.jpeg";
 import Tabs from "./components/Tabs";
+import Brokers from "./pages/Brokers";
+import Jobs from "./pages/Jobs";
+import Listings from "./pages/Listings";
 
 function App() {
   // const { userLoggedIn } = useAuth();
@@ -42,6 +45,9 @@ function App() {
           <Route path="/profile" element={<Profile user={VARUN_USER} profileImage={VarunProfilePic} />} />
           <Route path="/profile/varun" element={<Profile user={VARUN_USER} profileImage={VarunProfilePic} />} />
           <Route path="/profile/jainam" element={<Profile user={JAINAM_USER} profileImage={JainamProfilePic} />} />
+          <Route path="/brokers" element={<Brokers />} />
+          <Route path="/jobs" element={<Jobs />} />
+          <Route path="/listings" element={<Listings />} />
         </Routes>
         <Tabs />
       </AuthProvider>
