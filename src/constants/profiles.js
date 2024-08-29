@@ -71,7 +71,7 @@ export const GEORGE_USER = {
   designation: "Executive Director Africa",
   company: "Urbantap",
   description:
-    "As a dedicated Executive Director at Urbantap, I specialize in helping clients with locating, buying, and selling properties. I am a RERA-certified agent and have been in the industry for over 38 years. I am committed to providing the best service to my clients and ensuring that they have a smooth and stress-free experience. Contact me today to learn more about how I can help you with your real estate needs.",
+    "George serves as an Executive Director at UrbanTap - Africa Region. George has at various times held positions within banking top executive management from Executive Director, Operations, Information and Communications Technology at Societe Generale Bank (later Heritage Bank Plc.) from 1996 to 2000. Managing Director/Chief Executive Officer at Savannah Bank of Nigeria Plc. 2001, and Managing Director/Chief Executive Officer at Reliance Bank Limited (now Polaris Bank Plc.) from 2002 to 2004.",
   contact: {
     phone: "+2348027782040",
     email: "irechukwuandco@gmail.com",
