@@ -135,3 +135,34 @@ export const HARJEET_USER = {
   ],
 };
 
+export const AZIZA_PROFILE = {
+  image: "client/src/assets/aziza_profile.jpeg",
+  name: "Aziza Jalolidin",
+  designation: "Property Consultant",
+  company: "Richkey Properties",
+  description:
+    "A professional, ambitious and highly motivated individual with extensive knowledge and experience in Sales and Hospitality. Strong interpersonal skills that enables me to work in a team and build long lasting relationships. I have a demonstrated track record in employee training, operations, administration, sales and marketing; and customer service in a range of fields.",
+  contact: {
+    phone: "+971 58 986 6262",
+    email: "aziza_0495@icloud.com",
+    instagram: "@azizamilady",
+    linkedin: "linkedin.com/in/follow-my-profile",
+    whatsapp: "+971 58 986 6262",
+  },
+  experience: "1 year",
+  languages: ["English", "Arabic"],
+  properties: [
+    {
+      title: "1 BHK",
+      description: "Sobha Sea Heaven",
+      company: "Sobha Realty",
+      image: five_bhk,
+    },
+    {
+      title: "2 BHK",
+      description: "Sobha Orbis",
+      company: "Sobha Realty",
+      image: one_bhk,
+    },
+  ],
+};
