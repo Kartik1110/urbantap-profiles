@@ -96,3 +96,42 @@ export const GEORGE_USER = {
     },
   ],
 };
+
+export const HARJEET_USER = {
+  image: "client/src/assets/harjeet_profile.jpeg",
+  name: "Harjeet Singh",
+  designation: "Realtor",
+  company: "Revo Real Estate Brokers",
+  description:
+    "Offering an experience of more than 4 years with sales training and proven sales records, self belief has been the motivation for achieving organization targets and helped in maintaining success at improving sales procedures to streamline and strengthen processes with great training strategies. Multifaceted leader with analytical and diligent approach to building and leading strong teams and individuals. Helping organization and individuals by working together with different modules and models with my creativeness and experience for seeking solutions and always aim to reach more than expected.",
+  contact: {
+    phone: "+971585638330",
+    email: "harjeet@revorealty.com",
+    instagram: "@harjeet.revo",
+    linkedin: "linkedin.com/",
+    whatsapp: "+971585638330",
+  },
+  experience: "3 years 8 months",
+  languages: ["English", "Hindi", "Punjabi"],
+  properties: [
+    {
+      title: "1 BHK",
+      description: "Sobha Siniyah Island",
+      company: "Revo Real Estate Brokers",
+      image: five_bhk,
+    },
+    {
+      title: "2 BHK",
+      description: "Danube Diamonds",
+      company: "Revo Real Estate Brokers",
+      image: one_bhk,
+    },
+    {
+      title: "3 BHK",
+      description: "Damac Voilet",
+      company: "Revo Real Estate Brokers",
+      image: one_bhk,
+    },
+  ],
+};
+

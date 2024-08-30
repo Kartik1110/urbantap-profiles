@@ -11,10 +11,11 @@ import { useEffect, useState } from "react";
 import { auth } from "./firebase/firebase";
 import { Navigate } from "react-router-dom";
 import Register from "./pages/auth/Register";
-import { GEORGE_USER, JAINAM_USER, VARUN_USER } from "./constants/profiles";
+import { GEORGE_USER, HARJEET_USER, JAINAM_USER, VARUN_USER } from "./constants/profiles";
 import VarunProfilePic from "./assets/varun_profile.jpeg";
 import JainamProfilePic from "./assets/jainam_profile.jpeg";
 import GeorgeProfilePic from "./assets/george_profile.jpg"
+import HarjeetProfilePic from "./assets/harjeet_profile.jpeg";
 import Tabs from "./components/Tabs";
 import Brokers from "./pages/Brokers";
 import Jobs from "./pages/Jobs";
@@ -47,6 +48,7 @@ function App() {
           <Route path="/profile/varun" element={<Profile user={VARUN_USER} profileImage={VarunProfilePic} />} />
           <Route path="/profile/jainam" element={<Profile user={JAINAM_USER} profileImage={JainamProfilePic} />} />
           <Route path="/profile/george" element={<Profile user={GEORGE_USER} profileImage={GeorgeProfilePic} />} />
+          <Route path="/profile/harjeet" element={<Profile user={HARJEET_USER} profileImage={HarjeetProfilePic} />} />
           <Route path="/brokers" element={<Brokers />} />
           <Route path="/jobs" element={<Jobs />} />
           <Route path="/listings" element={<Listings />} />
