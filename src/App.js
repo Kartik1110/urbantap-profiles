@@ -1,5 +1,5 @@
 import "./App.css";
-import { useLocation } from "react-router-dom";
+import { useLocation, Navigate } from "react-router-dom";
 import Header from "./components/Header";
 import { Routes, Route } from "react-router-dom";
 import Profile from "./pages/Profile";
@@ -44,47 +44,19 @@ function App() {
           <Route path="/login" element={<Login />} /> */}
           {/* <Route path="/contact" element={<Contact />} /> */}
 
+          <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<Listings />} />
           <Route path="/brokers" element={<BrokersPage />} />
           <Route path="/jobs" element={<Jobs />} />
           <Route path="/listings" element={<Listings />} />
 
-          <Route
-            path="/profile"
-            element={
-              <Profile user={VARUN_USER} profileImage={VarunProfilePic} />
-            }
-          />
-          <Route
-            path="/profile/varun"
-            element={
-              <Profile user={VARUN_USER} profileImage={VarunProfilePic} />
-            }
-          />
-          <Route
-            path="/profile/jainam"
-            element={
-              <Profile user={JAINAM_USER} profileImage={JainamProfilePic} />
-            }
-          />
-          <Route
-            path="/profile/george"
-            element={
-              <Profile user={GEORGE_USER} profileImage={GeorgeProfilePic} />
-            }
-          />
-          <Route
-            path="/profile/harjeet"
-            element={
-              <Profile user={HARJEET_USER} profileImage={HarjeetProfilePic} />
-            }
-          />
-          <Route
-            path="/profile/aziza"
-            element={
-              <Profile user={AZIZA_PROFILE} profileImage={AzizaProfilePic} />
-            }
-          />
+          <Route path="/profile" element={<Profile user={VARUN_USER} profileImage={VarunProfilePic} />}/>
+          <Route path="/profile/varun" element={<Profile user={VARUN_USER} profileImage={VarunProfilePic} />}/> 
+          <Route path="/profile/jainam" element={<Profile user={JAINAM_USER} profileImage={JainamProfilePic} />}/>
+          <Route path="/profile/george" element={<Profile user={GEORGE_USER} profileImage={GeorgeProfilePic} />}/>
+          <Route path="/profile/harjeet" element={<Profile user={HARJEET_USER} profileImage={HarjeetProfilePic} />}/>
+          <Route path="/profile/aziza" element={<Profile user={AZIZA_PROFILE} profileImage={AzizaProfilePic} />}/>
+          
         </Routes>
         {location.pathname !== "/register" &&
           location.pathname !== "/login" && <Tabs />}

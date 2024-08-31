@@ -1,0 +1,26 @@
+[
+  {
+    "id": "listing123",
+    "broker": {
+      "name": "John Smith",
+      "avatar": "https://example.com/avatar.jpg"
+    },
+    "selling_price": "1,500,000",
+    "sq_ft": 2000,
+    "locality": "Downtown, Dubai",
+    "type": "Apartment",
+    "image": "https://example.com/property-image.jpg"
+  },
+  {
+    "id": "listing124",
+    "broker": {
+      "name": "Jane Doe",
+      "avatar": "https://example.com/avatar.jpg"
+    },
+    "selling_price": "1,250,000",
+    "sq_ft": 1800,
+    "locality": "Downtown, Dubai",
+    "type": "Apartment",
+    "image": "https://example.com/property-image.jpg"
+  }
+]

@@ -1,7 +1,15 @@
+import React, { useState, useEffect } from "react";
 import { Search, Filter } from "lucide-react";
 import BrokerListCard from "../components/BrokerListCard";
+import brokersData from "../constants/mock/brokers.json";
 
 const BrokersPage = () => {
+  const [brokers, setBrokers] = useState([]);
+
+  useEffect(() => {
+    setBrokers(brokersData);
+  }, []);
+
   return (
     <div className="mb-14">
       <div className="top-0 sticky bg-white z-50 px-7 h-[62px] py-[18px] flex items-center justify-between">
@@ -13,8 +21,12 @@ const BrokersPage = () => {
           <Search />
         </div>
       </div>
+      <div className="w-full h-0 border border-[#EAEAEA] mb-[14px]" />
+
       <div className="w-full px-7 flex flex-col justify-center items-center">
-        {[Array.from({ length: 20 }).map((_, index) => <BrokerListCard key={index} />)]}
+        {brokers.length > 0 ? brokers.map((broker) => (
+          <BrokerListCard key={broker.id} broker={broker} />
+        )) : <p>No brokers found</p>}
       </div>
     </div>
   );

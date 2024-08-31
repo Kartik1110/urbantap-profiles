@@ -26,7 +26,7 @@ const BrokersIcon = ({ color }) => {
       viewBox="0 0 25 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="pl-1"
+      className="pl-2"
     >
       <g clip-path="url(#clip0_192_1016)">
         <path
