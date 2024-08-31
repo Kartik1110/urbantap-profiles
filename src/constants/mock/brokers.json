@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "info": "Experienced broker with 10 years in the industry.",
+    "y_o_e": 10,
+    "languages": "EN, ES",
+    "is_certified": true,
+    "profile_pic": "https://via.placeholder.com/150",
+    "user": {
+      "w_number": "W123456789",
+      "email": "broker@example.com",
+      "ig_link": "https://instagram.com/johndoe",
+      "linkedin_link": "https://linkedin.com/johndoe"
+    },
+    "company": {
+      "id": 2,
+      "name": "Shobha Realty",
+      "logo": "https://via.placeholder.com/150"
+    },
+    "listings": [
+      {
+        "id": 1,
+        "selling_price": 500000,
+        "sq_ft": 1200,
+        "locality": "Urban",
+        "type": "House"
+      },
+      {
+        "id": 2,
+        "selling_price": 350000,
+        "sq_ft": 900,
+        "locality": "Suburban",
+        "type": "Apartment"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "profile_pic": "https://via.placeholder.com/150",
+    "user": {
+      "w_number": "W123456789",
+      "email": "broker@example.com",
+      "ig_link": "https://instagram.com/janedoe",
+      "linkedin_link": "https://linkedin.com/janedoe"
+    },
+    "name": "Jane Doe",
+    "company": {
+      "id": 2,
+      "name": "Real Estate Co.",
+      "logo": "https://via.placeholder.com/150"
+    },
+    "info": "Newcomer to the industry with a passion for real estate.",
+    "y_o_e": 2,
+    "languages": "EN, FR",
+    "listings": [
+      {
+        "id": 3,
+        "selling_price": 450000,
+        "sq_ft": 1000,
+        "locality": "Rural",
+        "type": "Land"
+      }
+    ],
+    "is_certified": false
+  }
+]
