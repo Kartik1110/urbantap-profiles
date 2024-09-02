@@ -1,4 +1,6 @@
 import { WhatsAppIcon, MessageIcon, CallIcon, ShareIcon } from "../constants/icons";
+import fiveBhk from "../assets/5bhk.svg";
+import profilePic from "../assets/varun_profile.jpeg"
 
 const Listing = ({ id, broker, selling_price, sq_ft, locality, type }) => {
   return (
@@ -10,7 +12,7 @@ const Listing = ({ id, broker, selling_price, sq_ft, locality, type }) => {
             {/* User Avatar */}
             <div
               className="w-[50px] h-[50px] bg-cover bg-center bg-purple rounded-full"
-              style={{ backgroundImage: "url('download.jpg')" }}
+              style={{ backgroundImage: `url(${profilePic})` }}
             ></div>
             {/* User Info */}
             <div className="flex flex-col items-start p-0 gap-1 w-[112px] h-[35px]">
@@ -35,8 +37,8 @@ const Listing = ({ id, broker, selling_price, sq_ft, locality, type }) => {
 
         {/* Image */}
         <div
-          className="w-full h-[195px] bg-cover bg-center bg-purple rounded-md"
-          style={{ backgroundImage: "url('image.png')" }}
+          className="w-full h-[195px] bg-cover bg-center rounded-md"
+          style={{ backgroundImage: `url(${fiveBhk})` }}
         ></div>
 
         {/* Details */}
