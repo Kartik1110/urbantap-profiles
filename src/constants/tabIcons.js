@@ -128,11 +128,11 @@ export const TABS_LIST = [
     icon: BrokersIcon,
     to: "/brokers",
   },
-  {
-    label: "Listings",
-    icon: ListingsIcon,
-    to: "/listings",
-  },
+  // {
+  //   label: "Listings",
+  //   icon: ListingsIcon,
+  //   to: "/listings",
+  // },
   {
     label: "Jobs",
     icon: JobsIcon,

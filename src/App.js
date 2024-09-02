@@ -12,12 +12,14 @@ import {
   HARJEET_USER,
   JAINAM_USER,
   VARUN_USER,
+  PRITPAL_USER,
 } from "./constants/profiles";
 import VarunProfilePic from "./assets/varun_profile.jpeg";
 import JainamProfilePic from "./assets/jainam_profile.jpeg";
 import GeorgeProfilePic from "./assets/george_profile.jpg";
 import HarjeetProfilePic from "./assets/harjeet_profile.jpeg";
 import AzizaProfilePic from "./assets/aziza_profile.jpeg";
+import PritpalProfilePic from "./assets/prtipal_profile.jpeg";
 import Tabs from "./components/Tabs";
 import BrokersPage from "./pages/Brokers";
 import Jobs from "./pages/Jobs";
@@ -56,10 +58,13 @@ function App() {
           <Route path="/profile/george" element={<Profile user={GEORGE_USER} profileImage={GeorgeProfilePic} />}/>
           <Route path="/profile/harjeet" element={<Profile user={HARJEET_USER} profileImage={HarjeetProfilePic} />}/>
           <Route path="/profile/aziza" element={<Profile user={AZIZA_PROFILE} profileImage={AzizaProfilePic} />}/>
+          <Route path="/profile/pritpal" element={<Profile user={PRITPAL_USER} profileImage={PritpalProfilePic} />}/>
           
         </Routes>
         {location.pathname !== "/register" &&
-          location.pathname !== "/login" && <Tabs />}
+          location.pathname !== "/login" && 
+          !location.pathname.includes("/profile") &&
+          <Tabs />}
       </AuthProvider>
     </>
   );

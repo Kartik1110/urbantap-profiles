@@ -166,3 +166,35 @@ export const AZIZA_PROFILE = {
     },
   ],
 };
+
+export const PRITPAL_USER = {
+  image: "client/src/assets/pritpal_profile.jpeg",
+  name: "Pritpal Sehgal",
+  designation: "Associate Director",
+  company: "Enso Real Estate Development",
+  description:
+    "A professional, ambitious and highly motivated individual with extensive knowledge and experience in Sales and Hospitality. Strong interpersonal skills that enables me to work in a team and build long lasting relationships. I have a demonstrated track record in employee training, operations, administration, sales and marketing; and customer service in a range of fields.",
+  contact: {
+    phone: "+971 55 524 0066",
+    email: "Pritpal@enso.inc",
+    instagram: "@pritpal_sehgal",
+    linkedin: "linkedin.com/in/pritpal",
+    whatsapp: "+971 55 524 0066",
+  },
+  experience: "4 years",
+  languages: ["English", "Punjabi", "Hindi"],
+  properties: [
+    {
+      title: "ENSO Jade",
+      description: "Jumeirah Garden City",
+      company: "Enso Real Estate Development",
+      image: five_bhk,
+    },
+    {
+      title: "ENSO Amber",
+      description: "Jumeirah Garden City",
+      company: "Enso Real Estate Development",
+      image: one_bhk,
+    },
+  ],
+};
