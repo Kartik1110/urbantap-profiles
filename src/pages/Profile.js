@@ -34,7 +34,7 @@ END:VCARD`;
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
-    link.download = `${contact.name}.vcf`;
+    link.download = `${user.name}.vcf`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -97,7 +97,7 @@ END:VCARD`;
           direction="column"
           cardStyling="py-4 px-5 justify-center gap-3"
           textContainerStyle="max-w-20 break-words text-center"
-          onClick={() => saveContactInfo}
+          onClick={saveContactInfo}
         />
         {/* Card 2 */}
         <ActionCard
