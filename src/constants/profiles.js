@@ -11,7 +11,7 @@ export const VARUN_USER = {
   contact: {
     phone: "+971585605980",
     email: "Varun.chopra@sobharealty.com",
-    instagram: "@thevarunchopra",
+    instagram: "thevarunchopra",
     linkedin: "linkedin.com/in/varun",
     whatsapp: "+971585605980",
   },
@@ -43,7 +43,7 @@ export const JAINAM_USER = {
   contact: {
     phone: "+971585857795",
     email: "Jainam.shukla@sobharealty.com",
-    instagram: "@jainam_shukla",
+    instagram: "jainam_shukla",
     linkedin: "linkedin.com/in/jainam",
     whatsapp: "+971585857795",
   },
@@ -75,7 +75,6 @@ export const GEORGE_USER = {
   contact: {
     phone: "+2348027782040",
     email: "irechukwuandco@gmail.com",
-    // instagram: "@thevarunchopra",
     linkedin: "linkedin.com/",
     whatsapp: "+2349086772739",
   },
@@ -107,7 +106,7 @@ export const HARJEET_USER = {
   contact: {
     phone: "+971585638330",
     email: "harjeet@revorealty.com",
-    instagram: "@harjeet.revo",
+    instagram: "harjeet.revo",
     linkedin: "linkedin.com/",
     whatsapp: "+971585638330",
   },
@@ -145,7 +144,7 @@ export const AZIZA_PROFILE = {
   contact: {
     phone: "+971 58 986 6262",
     email: "aziza_0495@icloud.com",
-    instagram: "@azizamilady",
+    instagram: "azizamilady",
     linkedin: "linkedin.com/in/follow-my-profile",
     whatsapp: "+971 58 986 6262",
   },

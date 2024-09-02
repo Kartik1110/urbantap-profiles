@@ -4,7 +4,7 @@ import instagramIcon from "../../../assets/icons/instagram.svg";
 import linkedinIcon from "../../../assets/icons/linkedin.svg";
 import whatsappIcon from "../../../assets/icons/whatsapp.svg";
 
-const contactDetails = ["Phone", "Email", "Instagram",  "Whatsapp"];
+const contactDetails = ["Phone", "Email", "Instagram", "Whatsapp"];
 
 const contactIcons = {
   phone: phoneIcon,
@@ -29,13 +29,32 @@ const ContactCard = ({ contact }) => {
           <div
             className="card-image flex justify-center align-middle p-4 mr-5"
             style={{
-                backgroundColor: "white",
-                borderRadius: 50,
-              }}
+              backgroundColor: "white",
+              borderRadius: 50,
+            }}
           >
             <img src={contactIcons[detail.toLowerCase()]} alt={detail} />
           </div>
-          <div className="card-content">
+          <div
+            className="card-content"
+            onClick={() => {
+              if (detail === "Phone") {
+                window.location.href = `tel:${contact[detail.toLowerCase()]}`;
+              } else if (detail === "Email") {
+                window.location.href = `mailto:${
+                  contact[detail.toLowerCase()]
+                }`;
+              } else if (detail === "Instagram") {
+                window.location.href = `https://www.instagram.com/${
+                  contact[detail.toLowerCase()]
+                }`;
+              } else if (detail === "Whatsapp") {
+                window.location.href = `https://wa.me/${
+                  contact[detail.toLowerCase()]
+                }`;
+              }
+            }}
+          >
             <h2 className="card-title text-xl">{detail}</h2>
             <h2 className="card-title">{contact[detail.toLowerCase()]}</h2>
           </div>

@@ -21,7 +21,7 @@ const Listings = () => {
   }, []);
 
   return (
-    <div className="mb-14">
+    <div className="">
       <div className="w-full flex flex-col justify-center items-center">
         {listings.length > 0 ? listings.map((listing) => (
           <React.Fragment key={listing.id}>
@@ -36,6 +36,7 @@ const Listings = () => {
             />
           </React.Fragment>
         )) : <p>No listings found</p>}
+        {listings.length > 0 && <div className="h-[0.5px] w-full border border-[#EAEAEA]"></div>}
       </div>
     </div>
   );

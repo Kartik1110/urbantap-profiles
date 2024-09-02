@@ -2,6 +2,7 @@ import { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import Logo from "./ui/Logo";
 import SearchListing from "./SearchListing";
+import { useNavigate } from "react-router-dom";
 
 const NavLinkList = () => {
   return (
@@ -42,9 +43,14 @@ const NavLinkList = () => {
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation(); // Get the current route
+  const navigate = useNavigate();
 
   const toggleNav = () => {
     setIsOpen(!isOpen);
+  };
+
+  const backToProfile = () => {
+    navigate(-1);
   };
 
   return (
@@ -59,7 +65,15 @@ const Nav = () => {
               {isOpen ? <X /> : <img src={hamburger} alt="Menu" />}
             </button>
           </div> */}
-          <Logo />
+          {location.pathname.includes("/profile") && <Logo />}
+          {(location.pathname === "/listings" || location.pathname === "/") && (
+            <button 
+              onClick={backToProfile} 
+              className="w-[112px] h-[34px] bg-gradient-to-b from-[#4DD969] to-[#28CD56] rounded-[30px] text-center font-medium text-sm font-inter leading-[17px] text-black"
+            >
+              Back to profile
+            </button>
+          )}
           {location.pathname === "/listings" && <SearchListing />}
         </nav>
         {isOpen && (

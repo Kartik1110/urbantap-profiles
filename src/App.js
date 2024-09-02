@@ -46,11 +46,11 @@ function App() {
           <Route path="/login" element={<Login />} /> */}
           {/* <Route path="/contact" element={<Contact />} /> */}
 
-          <Route path="/" element={<Navigate to="/home" />} />
-          <Route path="/home" element={<Listings />} />
+          <Route path="/" element={<Listings />} />
+          {/* <Route path="/home" element={<Listings />} /> */}
           <Route path="/brokers" element={<BrokersPage />} />
           <Route path="/jobs" element={<Jobs />} />
-          <Route path="/listings" element={<Listings />} />
+          {/* <Route path="/listings" element={<Listings />} /> */}
 
           <Route path="/profile" element={<Profile user={VARUN_USER} profileImage={VarunProfilePic} />}/>
           <Route path="/profile/varun" element={<Profile user={VARUN_USER} profileImage={VarunProfilePic} />}/> 
@@ -61,9 +61,9 @@ function App() {
           <Route path="/profile/pritpal" element={<Profile user={PRITPAL_USER} profileImage={PritpalProfilePic} />}/>
           
         </Routes>
-        {location.pathname !== "/register" &&
+        {/* {location.pathname !== "/register" &&
           location.pathname !== "/login" && 
-          <Tabs />}
+          <Tabs />} */}
       </AuthProvider>
     </>
   );
