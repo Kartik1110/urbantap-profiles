@@ -117,19 +117,24 @@ END:VCARD`;
           textContainerStyle="max-w-20 break-words text-center"
           onClick={() => {
             if (navigator.share) {
-              navigator.share({
-                title: `${user.name}'s Profile`,
-                text: `Check out ${user.name}'s profile on our platform!`,
-                url: window.location.href,
-              }).then(() => {
-                console.log('Successfully shared');
-              }).catch((error) => {
-                console.error('Error sharing:', error);
-              });
+              navigator
+                .share({
+                  title: `${user.name}'s Profile`,
+                  text: `Check out ${user.name}'s profile on our platform!`,
+                  url: window.location.href,
+                })
+                .then(() => {
+                  console.log("Successfully shared");
+                })
+                .catch((error) => {
+                  console.error("Error sharing:", error);
+                });
             } else {
               // Fallback for browsers that don't support navigator.share
-              const shareUrl = `whatsapp://send?text=Check out ${user.name}'s profile: ${encodeURIComponent(window.location.href)}`;
-              window.open(shareUrl, '_blank');
+              const shareUrl = `whatsapp://send?text=Check out ${
+                user.name
+              }'s profile: ${encodeURIComponent(window.location.href)}`;
+              window.open(shareUrl, "_blank");
             }
           }}
         />
@@ -214,7 +219,7 @@ END:VCARD`;
             style={{
               backgroundColor: "#D5F6FB",
               borderRadius: 15,
-              padding: "15px 138px",
+              padding: "15px 25px",
             }}
           >
             <button
@@ -222,7 +227,7 @@ END:VCARD`;
               onClick={() => navigate("/")}
             >
               {/* <h2 className="">View {user.properties.length - 2} More</h2> */}
-              View all listings
+              View All Listings
             </button>
           </div>
         )}
