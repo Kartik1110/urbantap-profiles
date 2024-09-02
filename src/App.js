@@ -63,7 +63,6 @@ function App() {
         </Routes>
         {location.pathname !== "/register" &&
           location.pathname !== "/login" && 
-          !location.pathname.includes("/profile") &&
           <Tabs />}
       </AuthProvider>
     </>
