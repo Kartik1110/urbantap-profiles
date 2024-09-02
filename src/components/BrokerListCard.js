@@ -1,4 +1,5 @@
 import ReraCertified from "./ReraCertified";
+import varunProfilePic from "../assets/varun_profile.jpeg";
 
 const BrokerListCard = ({ broker }) => {
   return (
@@ -9,7 +10,7 @@ const BrokerListCard = ({ broker }) => {
             {/* Profile Picture */}
             <div
               className="absolute w-[50px] h-[50px] bg-cover rounded-full bg-purple"
-              style={{ backgroundImage: `url(${broker.profile_pic})` }}
+              style={{ backgroundImage: `url(${varunProfilePic})` }}
             />
 
             {/* Company Logo */}

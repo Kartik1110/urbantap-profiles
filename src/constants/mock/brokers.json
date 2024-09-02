@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "John Doe",
+    "name": "Varun Chopra",
     "info": "Experienced broker with 10 years in the industry.",
     "y_o_e": 10,
     "languages": "EN, ES",
@@ -44,7 +44,7 @@
       "ig_link": "https://instagram.com/janedoe",
       "linkedin_link": "https://linkedin.com/janedoe"
     },
-    "name": "Jane Doe",
+    "name": "Jainam Shukla",
     "company": {
       "id": 2,
       "name": "Real Estate Co.",
