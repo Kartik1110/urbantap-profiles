@@ -2,7 +2,7 @@
   {
     "id": "listing123",
     "broker": {
-      "name": "John Smith",
+      "name": "Varun Chopra",
       "avatar": "https://example.com/avatar.jpg"
     },
     "selling_price": "1,500,000",
@@ -14,7 +14,7 @@
   {
     "id": "listing124",
     "broker": {
-      "name": "Jane Doe",
+      "name": "Jainam Shukla",
       "avatar": "https://example.com/avatar.jpg"
     },
     "selling_price": "1,250,000",
