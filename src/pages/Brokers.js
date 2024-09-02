@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { apiEndPoints } from "../constants/apiEndPoints";
 import { Search, Filter } from "lucide-react";
 import BrokerListCard from "../components/BrokerListCard";
 import brokersData from "../constants/mock/brokers.json";
@@ -7,6 +9,15 @@ const BrokersPage = () => {
   const [brokers, setBrokers] = useState([]);
 
   useEffect(() => {
+    // axios.get(apiEndPoints.brokers)
+    //   .then(response => {
+    //     console.log(response.data);
+    //     setBrokers(response.data.data);
+    //   })
+    //   .catch(error => {
+    //     console.error('Error fetching brokers:', error);
+    //   });
+
     setBrokers(brokersData);
   }, []);
 
