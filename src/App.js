@@ -6,6 +6,7 @@ import Profile from "./pages/Profile";
 import { AuthProvider } from "./contexts/authContext";
 import { useEffect, useState } from "react";
 import { auth } from "./firebase/firebase";
+
 import Listings from "./pages/Listings";
 import ProfileV2 from "./pages/ProfileV2";
 
@@ -46,7 +47,6 @@ function App() {
           <Route path="/profile/aziza" element={<Profile user={AZIZA_PROFILE} profileImage={AzizaProfilePic} />}/>
           <Route path="/profile/pritpal" element={<Profile user={PRITPAL_USER} profileImage={PritpalProfilePic} />}/>
            */}
-
         </Routes>
         {/* {location.pathname !== "/register" &&
           location.pathname !== "/login" && 
