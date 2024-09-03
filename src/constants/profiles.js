@@ -1,5 +1,7 @@
 import five_bhk from "../assets/5bhk.svg";
 import one_bhk from "../assets/1bhk.svg";
+import SyedListing1 from "../assets/syed_1_listing.jpeg"
+import SyedListing2 from "../assets/syed_2_listing.jpeg"
 
 export const VARUN_USER = {
   image: "client/src/assets/varun_profile.jpeg",
@@ -348,13 +350,13 @@ export const SYED_USER = {
       title: "Danube Diamondz",
       description: "Danube Properties",
       company: "Danube Properties",
-      image: five_bhk, // Using existing image as placeholder
+      image: SyedListing2, // Using existing image as placeholder
     },
     {
       title: "Danube Bayz 101",
       description: "Danube Properties",
       company: "Danube Properties",
-      image: one_bhk, // Using existing image as placeholder
+      image: SyedListing1, // Using existing image as placeholder
     },
   ],
 };

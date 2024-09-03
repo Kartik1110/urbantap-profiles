@@ -29,7 +29,7 @@ import AlinaProfilePic from "./assets/alina_profile.jpeg";
 import MarjanProfilePic from "./assets/marjan_profile.jpeg";
 import DortProfilePic from "./assets/dort_profile.jpeg";
 import SalmaProfilePic from "./assets/salma.jpeg";
-import SyedProfilePic from "./assets/syed_hussain_profile.png";
+import SyedProfilePic from "./assets/syed_profile.png";
 
 
 import Tabs from "./components/Tabs";
