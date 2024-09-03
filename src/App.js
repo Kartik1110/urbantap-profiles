@@ -14,7 +14,9 @@ import {
   VARUN_USER,
   PRITPAL_USER,
   ALINA_USER,
-  MARJAN_USER
+  MARJAN_USER,
+  DORTGULY_USER,
+  SALMA_USER
 } from "./constants/profiles";
 import VarunProfilePic from "./assets/varun_profile.jpeg";
 import JainamProfilePic from "./assets/jainam_profile.jpeg";
@@ -24,6 +26,8 @@ import AzizaProfilePic from "./assets/aziza_profile.jpeg";
 import PritpalProfilePic from "./assets/prtipal_profile.jpeg";
 import AlinaProfilePic from "./assets/alina_profile.jpeg";
 import MarjanProfilePic from "./assets/marjan_profile.jpeg";
+import DortProfilePic from "./assets/dort_profile.jpeg";
+import SalmaProfilePic from "./assets/salma.jpeg";
 
 
 import Tabs from "./components/Tabs";
@@ -67,6 +71,9 @@ function App() {
           <Route path="/profile/pritpal" element={<Profile user={PRITPAL_USER} profileImage={PritpalProfilePic} />}/>
           <Route path="/profile/alina" element={<Profile user={ALINA_USER} profileImage={AlinaProfilePic} />}/>
           <Route path="/profile/marjan" element={<Profile user={MARJAN_USER} profileImage={MarjanProfilePic} />}/>
+          <Route path="/profile/dortguly-meredov" element={<Profile user={DORTGULY_USER} profileImage={DortProfilePic} />}/>
+          <Route path="/profile/salma-klai" element={<Profile user={SALMA_USER} profileImage={SalmaProfilePic} />}/>
+
 
         </Routes>
         {location.pathname !== "/register" &&
