@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:5000/api/v1";
+const BASE_URL = "https://api.urbantap.io/api/v1";
 
 export const apiEndPoints = {
   brokers: `${BASE_URL}/brokers`,

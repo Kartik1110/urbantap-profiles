@@ -1,52 +1,69 @@
+import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import axios from "axios";
+import { apiEndPoints } from "../constants/apiEndPoints";
 import ProfileButton from "../components/ProfileButton";
 import ActionCard from "../components/ui/cards/ActionCard";
 import shareIcon from "../assets/icons/share.svg";
 import reraLogo from "../assets/icons/rera-certified.svg";
 import contact from "../assets/icons/contact.svg";
 import call from "../assets/icons/call.svg";
-import { useState } from "react";
-import PropertyCard from "../components/ui/cards/PropertyCard";
-import ContactCard from "../components/ui/cards/ContactCard";
-import { useNavigate } from "react-router-dom";
+import PropertyCardV2 from "../components/ui/cards/PropertyCardV2";
+import ContactCardV2 from "../components/ui/cards/ContactCardV2";
 
-const Profile = ({ user, profileImage }) => {
+const Profile = () => {
+  const params = useParams();
   const navigate = useNavigate();
-
+  const [user, setUser] = useState();
   const [isExpanded, setIsExpanded] = useState(false);
+  const [loading, setLoading] = useState(true);
 
-  const [showAllProperties, setShowAllProperties] = useState(false);
 
-  const saveContactInfo = () => {
+  useEffect(() => {
+    setLoading(true);
+    axios.get(`${apiEndPoints.brokers}/${params.id}`)
+    .then((res) => {
+      setUser(res.data.data);
+      setLoading(false);
+    })
+    .catch((err) => {
+      console.log("err", err);
+      setLoading(false);
+    })
+}, [params.id]);
+
+
+const saveContactInfo = () => {
     const contact = {
-      name: user.name,
-      phone: user.phone,
-      email: user.email,
+        name: user.broker.name,
+        phone: user.broker.w_number,
+        email: user.broker.email,
     };
     const vcard = `BEGIN:VCARD
-VERSION:3.0
-FN:${contact.name}
-TEL:${user.contact.whatsapp}
-EMAIL:${user.contact.email}
-END:VCARD`;
+    VERSION:3.0
+    FN:${contact.name}
+    TEL:${contact.phone}
+    EMAIL:${contact.email}
+    END:VCARD`;
     const blob = new Blob([vcard], {
-      type: "text/vcard;charset=utf-8",
+        type: "text/vcard;charset=utf-8",
     });
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
-    link.download = `${user.name}.vcf`;
+    link.download = `${contact.name}.vcf`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-  };
+};
 
-  const callNow = () => {
-    window.location.href = `tel:${user.contact.whatsapp}`;
-  };
+const callNow = () => {
+    window.location.href = `tel:${user.broker.w_number}`;
+};
 
-  const renderLanguages = () => {
-    return user.languages.map((language, index) => (
-      <div
+const renderLanguages = () => {
+    return user.broker && user.broker.languages && user.broker.languages.map((language, index) => (
+        <div
         key={index}
         className="tag-box px-4 py-2"
         style={{
@@ -54,17 +71,25 @@ END:VCARD`;
           borderRadius: "25px",
           fontSize: "0.9rem",
         }}
-      >
+        >
         {language}
       </div>
     ));
-  };
+};
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (!user || !user.broker) {
+    return <div>Error: User data not available</div>;
+  }
 
   return (
     <div className="px-7">
       {/* pfp row */}
       <div className="flex flex-row justify-between">
-        <ProfileButton profileImage={profileImage} />
+        <ProfileButton profileImage={user.broker.profile_pic} />
 
         {/* <ActionCard
           title="Share"
@@ -79,9 +104,10 @@ END:VCARD`;
       {/* profile details */}
       <div className="flex flex-row mt-2 justify-between">
         <div className="flex flex-col">
-          <h1 className="text-2xl font-bold">{user.name}</h1>
+          <h1 className="text-2xl font-bold">{user.broker.name}</h1>
           <p className="text-md text-gray">
-            {user.designation} at {user.company}
+            {/* {user.designation} at {user.broker.company} */}
+            {user.company.name}
           </p>
         </div>
 
@@ -119,8 +145,8 @@ END:VCARD`;
             if (navigator.share) {
               navigator
                 .share({
-                  title: `${user.name}'s Profile`,
-                  text: `Check out ${user.name}'s profile on our platform!`,
+                  title: `${user.broker.name}'s Profile`,
+                  text: `Check out ${user.broker.name}'s profile on our platform!`,
                   url: window.location.href,
                 })
                 .then(() => {
@@ -132,7 +158,7 @@ END:VCARD`;
             } else {
               // Fallback for browsers that don't support navigator.share
               const shareUrl = `whatsapp://send?text=Check out ${
-                user.name
+                user.broker.name
               }'s profile: ${encodeURIComponent(window.location.href)}`;
               window.open(shareUrl, "_blank");
             }
@@ -153,7 +179,7 @@ END:VCARD`;
         >
           {isExpanded ? (
             <div>
-              {user.description}
+              {user.broker.info}
               <br />
               <button
                 className="font-medium font-inter mt-2"
@@ -164,7 +190,7 @@ END:VCARD`;
             </div>
           ) : (
             <div>
-              {`${user.description.substring(0, 86)}...`}
+              {`${user.broker.info.substring(0, 86)}...`}
               <br />
               <button
                 className="font-medium font-inter mt-2"
@@ -187,7 +213,7 @@ END:VCARD`;
           }}
         >
           <p className="font-medium font-inter"> Years of Experience</p>
-          <h2 className="">{user.experience}</h2>
+          <h2 className="">{Math.floor(user.broker.y_o_e / 12)} Years</h2>
         </div>
       </div>
 
@@ -205,15 +231,15 @@ END:VCARD`;
       </div>
 
       {/* Properties available for sale */}
-      <div className="mt-5">
+      {user.listings.length > 0 && <div className="mt-5">
         <h2 className="text-xl font-medium">Properties available for sale</h2>
 
-        {user.properties.length > 0 &&
-          user.properties.map((property, index) => (
-            <PropertyCard key={index} property={property} />
+        {user.listings.length > 0 &&
+          user.listings.map((property, index) => (
+            <PropertyCardV2 key={index} property={property} />
           ))}
 
-        {user.properties.length > 0 && (
+        {user.listings.length > 0 && (
           <div
             className="flex flex-row justify-center align-middle my-3"
             style={{
@@ -249,12 +275,12 @@ END:VCARD`;
             </button>
           </div>
         )} */}
-      </div>
+      </div>}
 
       {/* Contact Info */}
       <div className="my-5">
         <h2 className="text-xl font-medium">Contact Info</h2>
-        <ContactCard contact={user.contact} />
+        {loading ? <div>Loading...</div> : <ContactCardV2 props={user.broker} />}
       </div>
     </div>
   );
