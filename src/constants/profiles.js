@@ -350,13 +350,13 @@ export const SYED_USER = {
       title: "Danube Diamondz",
       description: "Danube Properties",
       company: "Danube Properties",
-      image: SyedListing2, // Using existing image as placeholder
+      image: five_bhk, // Using existing image as placeholder
     },
     {
       title: "Danube Bayz 101",
       description: "Danube Properties",
       company: "Danube Properties",
-      image: SyedListing1, // Using existing image as placeholder
+      image: one_bhk, // Using existing image as placeholder
     },
   ],
 };
