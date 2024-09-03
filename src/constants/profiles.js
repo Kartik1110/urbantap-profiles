@@ -327,4 +327,36 @@ export const ALINA_USER = {
   ],
 };
 
+export const SYED_USER = {
+  image: "client/src/assets/syed_profile.jpg", // Assuming an image file exists
+  name: "Syed Hussian",
+  designation: "Global Head of Sales",
+  company: "Danube Properties",
+  description:
+    "Mr. Syed Husain stands as a distinguished professional whose career embodies a rich tapestry of diverse experiences across multiple industries. A seasoned sales professional with over 20 years of experience, brings a wealth of knowledge and expertise to his role as General Manager for Sales at Danube Properties. He leads a dynamic team dedicated to exceeding customer expectations and matching each individual with their dream home. Syed's deep understanding of the Dubai property market and his commitment to providing exceptional service ensure a smooth and successful buying experience for every Danube Properties client.",
+  contact: {
+    phone: "", // Phone number not provided
+    email: "", // Email not provided
+    instagram: "", // Instagram not provided
+    linkedin: "linkedin.com/in/syed-husain-2839a2b",
+    whatsapp: "", // WhatsApp not provided
+  },
+  experience: "10 years",
+  languages: ["English", "Hindi"],
+  properties: [
+    {
+      title: "Danube Diamondz",
+      description: "Danube Properties",
+      company: "Danube Properties",
+      image: five_bhk, // Using existing image as placeholder
+    },
+    {
+      title: "Danube Bayz 101",
+      description: "Danube Properties",
+      company: "Danube Properties",
+      image: one_bhk, // Using existing image as placeholder
+    },
+  ],
+};
+
 

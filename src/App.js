@@ -16,7 +16,8 @@ import {
   ALINA_USER,
   MARJAN_USER,
   DORTGULY_USER,
-  SALMA_USER
+  SALMA_USER,
+  SYED_USER
 } from "./constants/profiles";
 import VarunProfilePic from "./assets/varun_profile.jpeg";
 import JainamProfilePic from "./assets/jainam_profile.jpeg";
@@ -28,6 +29,7 @@ import AlinaProfilePic from "./assets/alina_profile.jpeg";
 import MarjanProfilePic from "./assets/marjan_profile.jpeg";
 import DortProfilePic from "./assets/dort_profile.jpeg";
 import SalmaProfilePic from "./assets/salma.jpeg";
+import SyedProfilePic from "./assets/syed_hussain_profile.png";
 
 
 import Tabs from "./components/Tabs";
@@ -73,6 +75,7 @@ function App() {
           <Route path="/profile/marjan" element={<Profile user={MARJAN_USER} profileImage={MarjanProfilePic} />}/>
           <Route path="/profile/dortguly-meredov" element={<Profile user={DORTGULY_USER} profileImage={DortProfilePic} />}/>
           <Route path="/profile/salma-klai" element={<Profile user={SALMA_USER} profileImage={SalmaProfilePic} />}/>
+          <Route path="/profile/syed-hussain" element={<Profile user={SYED_USER} profileImage={SyedProfilePic} />}/>
 
 
         </Routes>
