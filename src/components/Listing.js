@@ -2,7 +2,7 @@ import { WhatsAppIcon, MessageIcon, CallIcon, ShareIcon } from "../constants/ico
 import fiveBhk from "../assets/5bhk.svg";
 import profilePic from "../assets/varun_profile.jpeg"
 
-const Listing = ({ id, broker, selling_price, sq_ft, locality, type }) => {
+const Listing = ({ id, broker, selling_price, sq_ft, locality, type, onClick }) => {
   return (
     <div className="h-[400px] w-full px-7 flex items-center justify-center">
       <div className="flex flex-col items-start p-0 gap-4 w-full h-[383px]">
@@ -11,13 +11,14 @@ const Listing = ({ id, broker, selling_price, sq_ft, locality, type }) => {
           <div className="flex flex-row items-center p-0 gap-3 w-[174px] h-[50px]">
             {/* User Avatar */}
             <div
+              onClick={onClick}
               className="w-[50px] h-[50px] bg-cover bg-center bg-purple rounded-full"
               style={{ backgroundImage: `url(${profilePic})` }}
             ></div>
             {/* User Info */}
             <div className="flex flex-col items-start p-0 gap-1 w-[112px] h-[35px]">
               <span className="text-[#1A1B23] font-medium text-sm">
-                {broker.name}
+                {broker}
               </span>
               <span className="text-[#919191] font-normal text-xs">
                 Is Selling
