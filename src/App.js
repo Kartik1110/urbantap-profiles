@@ -13,6 +13,8 @@ import {
   JAINAM_USER,
   VARUN_USER,
   PRITPAL_USER,
+  ALINA_USER,
+  MARJAN_USER
 } from "./constants/profiles";
 import VarunProfilePic from "./assets/varun_profile.jpeg";
 import JainamProfilePic from "./assets/jainam_profile.jpeg";
@@ -20,6 +22,10 @@ import GeorgeProfilePic from "./assets/george_profile.jpg";
 import HarjeetProfilePic from "./assets/harjeet_profile.jpeg";
 import AzizaProfilePic from "./assets/aziza_profile.jpeg";
 import PritpalProfilePic from "./assets/prtipal_profile.jpeg";
+import AlinaProfilePic from "./assets/alina_profile.jpeg";
+import MarjanProfilePic from "./assets/marjan_profile.jpeg";
+
+
 import Tabs from "./components/Tabs";
 import BrokersPage from "./pages/Brokers";
 import Jobs from "./pages/Jobs";
@@ -59,7 +65,9 @@ function App() {
           <Route path="/profile/harjeet" element={<Profile user={HARJEET_USER} profileImage={HarjeetProfilePic} />}/>
           <Route path="/profile/aziza" element={<Profile user={AZIZA_PROFILE} profileImage={AzizaProfilePic} />}/>
           <Route path="/profile/pritpal" element={<Profile user={PRITPAL_USER} profileImage={PritpalProfilePic} />}/>
-          
+          <Route path="/profile/alina" element={<Profile user={ALINA_USER} profileImage={AlinaProfilePic} />}/>
+          <Route path="/profile/marjan" element={<Profile user={MARJAN_USER} profileImage={MarjanProfilePic} />}/>
+
         </Routes>
         {location.pathname !== "/register" &&
           location.pathname !== "/login" && 

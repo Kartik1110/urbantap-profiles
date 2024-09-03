@@ -198,3 +198,133 @@ export const PRITPAL_USER = {
     },
   ],
 };
+
+export const DORTGULY_USER = {
+  image: "client/src/assets/dortguly_profile.jpg",
+  name: "Dortguly Meredov",
+  designation: "Sales Manager",
+  company: "Sobha Realty",
+  description:
+    "This is Dort. Enthusiastic, Professional, and knowledgeable Real Estate agent with over 3 years of experience. I have done several deals in the primary and secondary market throughout my career. The Real Estate experience has helped me acquire a wide range of skills and knowledge in the industry as well as ability to work with brokers, developers, individual sellers and buyers. Still learning, improving, and striving to make excellence as my style and standard.",
+  contact: {
+    phone: "+971528951852",
+    email: "", // Email not provided
+    instagram: "dortindubai",
+    linkedin: "https://www.linkedin.com/in/dortguly-meredov-621b801a3",
+    whatsapp: "+971528951852",
+  },
+  experience: "3 years",
+  languages: ["English", "Turkish", "Russian"],
+  properties: [
+    {
+      title: "Sobha Siniyah Island",
+      description: "Umm Al Quwain",
+      company: "Sobha Realty",
+      image: five_bhk,
+    },
+    {
+      title: "Sobha Hartland 2",
+      description: "Meydan, Dubai",
+      company: "Sobha Realty",
+      image: one_bhk,
+    },
+  ],
+};
+
+export const MARJAN_USER = {
+  image: "client/src/assets/marjan_profile.jpg",
+  name: "Marjan Bakhtari",
+  designation: "Manager - Channel Relations",
+  company: "Sobha Realty",
+  description:
+    "Manager - Channel Relations | Global Partnership | Sustainability | Humanitarian Aid | CSR",
+  contact: {
+    phone: "0507624578",
+    email: "marjan.bakhtari@sobharealty.com",
+    instagram: "",
+    linkedin: "https://www.linkedin.com/in/marjanbakhtari/",
+    whatsapp: "0507624578",
+  },
+  experience: "6 months",
+  languages: ["English", "Dutch", "Dari"],
+  properties: [
+    {
+      title: "Sobha Siniyah Island",
+      description: "Umm Al Quwain",
+      company: "Sobha Realty",
+      image: five_bhk,
+    },
+    {
+      title: "Sobha Hartland 2",
+      description: "Meydan, Dubai",
+      company: "Sobha Realty",
+      image: one_bhk,
+    },
+  ],
+};
+
+export const SALMA_USER = {
+  image: "client/src/assets/salma_profile.jpg",
+  name: "Salma Klia",
+  designation: "Sales Manager",
+  company: "Sobha Realty",
+  description:
+    "Ambitious, personable agent with 2 years of UAE experience, providing extensive knowledge about the real estate industry. Also experienced with management and rental of holiday homes. Eager to continue growing in market trends while proving my ability to win clients and guiding them from inception to close.",
+  contact: {
+    phone: "0585907341",
+    email: "salmaklia1@gmail.com",
+    instagram: "",
+    linkedin: "https://www.linkedin.com/in/salma-klia-731880222/",
+    whatsapp: "0585907341",
+  },
+  experience: "2 years",
+  languages: ["English", "Arabic", "French"],
+  properties: [
+    {
+      title: "Sobha Siniyah Island",
+      description: "Umm Al Quwain",
+      company: "Sobha Realty",
+      image: five_bhk,
+    },
+    {
+      title: "Sobha Hartland 2",
+      description: "Meydan, Dubai",
+      company: "Sobha Realty",
+      image: one_bhk,
+    },
+  ],
+};
+
+export const ALINA_USER = {
+  image: "client/src/assets/alina_profile.jpg",
+  name: "Alina Beisembayeva",
+  designation: "Sales Manager",
+  company: "Sobha Realty",
+  description:
+    "Experienced, highly responsible, and self-motivated real estate sales agent with a strong passion for success. Possesses a proven track record of delivering exceptional results in the industry. Demonstrated excellent interpersonal and communication skills, fostering positive client relationships and exceeding expectations.",
+  contact: {
+    phone: "0508816086",
+    email: "alina.sutyagina.95@mail.ru",
+    instagram: "",
+    linkedin: "https://www.linkedin.com/in/alina-beisembayeva-978b55309/",
+    whatsapp: "0508816086",
+  },
+  experience: "2 years 8 months",
+  languages: ["English", "Russian", "Turkish"],
+  properties: [
+    {
+      title: "Sobha Siniyah Island",
+      description: "Umm Al Quwain",
+      company: "Sobha Realty",
+      image: five_bhk,
+    },
+    {
+      title: "Sobha Hartland 2",
+      description: "Meydan, Dubai",
+      company: "Sobha Realty",
+      image: one_bhk,
+    },
+  ],
+};
+
+
