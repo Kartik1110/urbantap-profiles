@@ -29,7 +29,7 @@ const ContactCard = ({ props }) => {
         window.location.href = `mailto:${value}`;
         break;
       case "instagram":
-        window.open(`https://www.instagram.com/${value}`, "_blank");
+        window.open(`${value}`, "_blank");
         break;
       case "whatsapp":
         window.open(`https://wa.me/${value.replace(/\D/g, "")}`, "_blank");
@@ -64,7 +64,7 @@ const ContactCard = ({ props }) => {
                 onClick={() => handleClick(key, contact[key])}
               >
                 <h2 className="card-title text-xl">{label}</h2>
-                <h2 className="card-title">{contact[key]}</h2>
+                <h2 className="card-title">{key === "instagram" ? "" : contact[key] }</h2>
               </div>
             </div>
           )
