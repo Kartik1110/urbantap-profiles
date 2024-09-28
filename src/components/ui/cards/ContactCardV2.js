@@ -97,16 +97,16 @@ const ContactCard = ({ user, allowEdit }) => {
           <div
             key={key}
             className="flex flex-row items-center justify-start mt-5"
+            onClick={() => handleClick(key, contact[key])}
           >
             {/* Icon Section */}
-            <div className="flex justify-center align-middle mr-5">
+            <div className="flex justify-center align-middle mr-3">
               <img src={icon} alt={label} />
             </div>
 
             {/* Content Section */}
             <div
               className="card-content cursor-pointer flex flex-col"
-              onClick={() => handleClick(key, contact[key])}
             >
               <p className="text-sm font-normal text-gray">{label}</p>
               {editField === key ? (
@@ -119,8 +119,8 @@ const ContactCard = ({ user, allowEdit }) => {
                   autoFocus
                 />
               ) : (
-                <h2 className="mt-1 font-normal text-black">
-                  {key === "instagram" ? "" : contact[key]}
+                <h2 className="mt-[0.5px] font-normal text-black">
+                  {key === "instagram" ? "Visit profile url" : contact[key]}
                 </h2>
               )}
             </div>
