@@ -8,7 +8,7 @@ const ProfileButton = ({profileImage}) => {
   return (
     <div className="relative">
       <img
-        className="h-20 w-20 rounded-full"
+        className="h-24 w-24 rounded-full"
         src={profileImage}
         alt=""
         style={{ zIndex: "1" }}

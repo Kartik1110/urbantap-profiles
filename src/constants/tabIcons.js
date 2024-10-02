@@ -1,14 +1,21 @@
 const HouseIcon = ({ color }) => {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="25"
+      width="24"
       height="24"
-      viewBox="0 0 25 24"
+      viewBox="0 0 24 24"
       fill="none"
+      xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M9.5 17.0001H15.5M17.5 21.0001H7.5C6.43913 21.0001 5.42172 20.5786 4.67157 19.8285C3.92143 19.0783 3.5 18.0609 3.5 17.0001V10.7081C3.49999 10.0203 3.67732 9.34411 4.01487 8.74485C4.35242 8.1456 4.83879 7.64351 5.427 7.28706L10.427 4.25706C11.0521 3.87826 11.7691 3.67798 12.5 3.67798C13.2309 3.67798 13.9479 3.87826 14.573 4.25706L19.573 7.28706C20.1611 7.64342 20.6473 8.14535 20.9849 8.74442C21.3224 9.34348 21.4998 10.0194 21.5 10.7071V17.0001C21.5 18.0609 21.0786 19.0783 20.3284 19.8285C19.5783 20.5786 18.5609 21.0001 17.5 21.0001Z"
+        d="M10.07 2.81984L3.14001 8.36983C2.36001 8.98983 1.86001 10.2999 2.03001 11.2799L3.36001 19.2398C3.60001 20.6598 4.96 21.8098 6.4 21.8098H17.6C19.03 21.8098 20.4 20.6498 20.64 19.2398L21.97 11.2799C22.13 10.2999 21.63 8.98983 20.86 8.36983L13.93 2.82985C12.86 1.96985 11.13 1.96984 10.07 2.81984Z"
+        stroke={color || "#d3dce6"}
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M12 15.5C13.3807 15.5 14.5 14.3807 14.5 13C14.5 11.6193 13.3807 10.5 12 10.5C10.6193 10.5 9.5 11.6193 9.5 13C9.5 14.3807 10.6193 15.5 12 15.5Z"
         stroke={color || "#d3dce6"}
         stroke-width="1.5"
         stroke-linecap="round"
@@ -21,53 +28,41 @@ const HouseIcon = ({ color }) => {
 const BrokersIcon = ({ color }) => {
   return (
     <svg
-      width="25"
+      width="24"
       height="24"
-      viewBox="0 0 25 24"
+      viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="pl-2"
+      className="ml-2"
     >
-      <g clip-path="url(#clip0_192_1016)">
-        <path
-          d="M23.833 20.9999V18.9999C23.8323 18.1136 23.5374 17.2527 22.9944 16.5522C22.4514 15.8517 21.6911 15.3515 20.833 15.1299"
-          stroke={color || "#d3dce6"}
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-        <path
-          d="M17.833 21V19C17.833 17.9391 17.4116 16.9217 16.6614 16.1716C15.9113 15.4214 14.8939 15 13.833 15H5.83301C4.77214 15 3.75473 15.4214 3.00458 16.1716C2.25444 16.9217 1.83301 17.9391 1.83301 19V21"
-          stroke={color || "#d3dce6"}
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-        <path
-          d="M16.833 3.12988C17.6934 3.35018 18.456 3.85058 19.0006 4.55219C19.5452 5.2538 19.8409 6.11671 19.8409 7.00488C19.8409 7.89305 19.5452 8.75596 19.0006 9.45757C18.456 10.1592 17.6934 10.6596 16.833 10.8799"
-          stroke={color || "#d3dce6"}
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-        <path
-          d="M9.83301 11C12.0421 11 13.833 9.20914 13.833 7C13.833 4.79086 12.0421 3 9.83301 3C7.62387 3 5.83301 4.79086 5.83301 7C5.83301 9.20914 7.62387 11 9.83301 11Z"
-          stroke={color || "#d3dce6"}
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </g>
-      <defs>
-        <clipPath id="clip0_192_1016">
-          <rect
-            width="24"
-            height="24"
-            fill="white"
-            transform="translate(0.833008)"
-          />
-        </clipPath>
-      </defs>
+      <path
+        d="M9.16 10.87C9.06 10.86 8.94 10.86 8.83 10.87C6.45 10.79 4.56 8.84 4.56 6.44C4.56 3.99 6.54 2 9 2C11.45 2 13.44 3.99 13.44 6.44C13.43 8.84 11.54 10.79 9.16 10.87Z"
+        stroke={color || "#d3dce6"}
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M16.41 4C18.35 4 19.91 5.57 19.91 7.5C19.91 9.39 18.41 10.93 16.54 11C16.46 10.99 16.37 10.99 16.28 11"
+        stroke={color || "#d3dce6"}
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M4.16 14.56C1.74 16.18 1.74 18.82 4.16 20.43C6.91 22.27 11.42 22.27 14.17 20.43C16.59 18.81 16.59 16.17 14.17 14.56C11.43 12.73 6.92 12.73 4.16 14.56Z"
+        stroke={color || "#d3dce6"}
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M18.34 20C19.06 19.85 19.74 19.56 20.3 19.13C21.86 17.96 21.86 16.03 20.3 14.86C19.75 14.44 19.08 14.16 18.37 14"
+        stroke={color || "#d3dce6"}
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
     </svg>
   );
 };
@@ -75,16 +70,45 @@ const BrokersIcon = ({ color }) => {
 const JobsIcon = ({ color }) => {
   return (
     <svg
-      width="25"
+      width="24"
       height="24"
-      viewBox="0 0 25 24"
+      viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M9.16699 8H4.16699C3.63656 8 3.12785 8.21071 2.75278 8.58579C2.37771 8.96086 2.16699 9.46957 2.16699 10V19C2.16699 19.5304 2.37771 20.0391 2.75278 20.4142C3.12785 20.7893 3.63656 21 4.16699 21H20.167C20.6974 21 21.2061 20.7893 21.5812 20.4142C21.9563 20.0391 22.167 19.5304 22.167 19V10C22.167 9.46957 21.9563 8.96086 21.5812 8.58579C21.2061 8.21071 20.6974 8 20.167 8H15.167M9.16699 8V3.6C9.16699 3.44087 9.23021 3.28826 9.34273 3.17574C9.45525 3.06321 9.60786 3 9.76699 3H14.567C14.7261 3 14.8787 3.06321 14.9913 3.17574C15.1038 3.28826 15.167 3.44087 15.167 3.6V8M9.16699 8H15.167M9.16699 8V14M15.167 8V14"
+        d="M14 13V14C14 14.01 14 14.01 14 14.02C14 15.11 13.99 16 12 16C10.02 16 10 15.12 10 14.03V13C10 12 10 12 11 12H13C14 12 14 12 14 13Z"
         stroke={color || "#d3dce6"}
         stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M21.65 11C19.34 12.68 16.7 13.68 14 14.02"
+        stroke={color || "#d3dce6"}
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M2.61914 11.2695C4.86914 12.8095 7.40914 13.7395 9.99914 14.0295"
+        stroke={color || "#d3dce6"}
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M7.99983 22H15.9998C20.0198 22 20.7398 20.39 20.9498 18.43L21.6998 10.43C21.9698 7.99 21.2698 6 16.9998 6H6.99983C2.72983 6 2.02983 7.99 2.29983 10.43L3.04983 18.43C3.25983 20.39 3.97983 22 7.99983 22Z"
+        stroke={color || "#d3dce6"}
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M8 6V5.2C8 3.43 8 2 11.2 2H12.8C16 2 16 3.43 16 5.2V6"
+        stroke={color || "#d3dce6"}
+        stroke-width="1.5"
+        stroke-miterlimit="10"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
@@ -117,25 +141,109 @@ const ListingsIcon = ({ color }) => {
   );
 };
 
-export const TABS_LIST = [
-  {
-    label: "Home",
-    icon: HouseIcon,
-    to: "/home",
-  },
-  {
-    label: "Brokers",
-    icon: BrokersIcon,
-    to: "/brokers",
-  },
-  // {
-  //   label: "Listings",
-  //   icon: ListingsIcon,
-  //   to: "/listings",
-  // },
-  {
-    label: "Jobs",
-    icon: JobsIcon,
-    to: "/jobs",
-  },
-];
+const ProfileIcon = ({ color }) => {
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke={color || "#d3dce6"}
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="lucide lucide-user"
+  >
+    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+    <circle cx="12" cy="7" r="4" />
+  </svg>;
+};
+
+const ShareIcon = () => (
+  <svg
+    width="45"
+    height="44"
+    viewBox="0 0 45 44"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className=""
+  >
+    <circle cx="22.5" cy="22" r="22" fill="#0DCB88" />
+    <path
+      opacity="0.34"
+      d="M19.1099 23.6486L22.6899 20.0586"
+      stroke="black"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M16.4 16.3202L24.89 13.4902C28.7 12.2202 30.77 14.3002 29.51 18.1102L26.68 26.6002C24.78 32.3102 21.66 32.3102 19.76 26.6002L18.92 24.0802L16.4 23.2402C10.69 21.3402 10.69 18.2302 16.4 16.3202Z"
+      stroke="black"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </svg>
+);
+
+export const getTabsList = (profileTo, profileIcon) => {
+  return [
+    {
+      label: "Home",
+      icon: HouseIcon,
+      to: "/home",
+    },
+    {
+      label: "Brokers",
+      icon: BrokersIcon,
+      to: "/brokers",
+    },
+    // {
+    //   label: "Listings",
+    //   icon: ListingsIcon,
+    //   to: "/listings",
+    // },
+    {
+      label: "share",
+      icon: ShareIcon,
+      to: "",
+    },
+    {
+      label: "Jobs",
+      icon: JobsIcon,
+      to: "/jobs",
+    },
+    {
+      label: "Profile",
+      icon: ProfileIcon,
+      // icon: <img src={profileIcon} alt="user-icon" />,
+      icon: () =>
+        profileIcon ? (
+          <img
+            src={profileIcon}
+            alt="user-icon"
+            className="w-6 h-6 rounded-full object-cover ml-0.5"
+          />
+        ) : (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke={"#d3dce6"}
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-user"
+            className="ml-1"
+          >
+            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+        ),
+      to: profileTo,
+    },
+  ];
+};

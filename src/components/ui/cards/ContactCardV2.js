@@ -93,32 +93,22 @@ const ContactCard = ({ user, allowEdit }) => {
   return (
     <div>
       {contactDetails.map(({ key, label, icon }) => (
-        <div
-          key={key}
-          className="card p-5 mt-3 flex flex-row align-middle relative"
-          style={{
-            backgroundColor: "rgba(243, 245, 248, 1)",
-            borderRadius: 15,
-          }}
-        >
-          {/* Icon Section */}
+        <div className="w-full flex items-center justify-between">
           <div
-            className="card-image flex justify-center align-middle p-4 mr-5"
-            style={{
-              backgroundColor: "white",
-              borderRadius: 50,
-            }}
+            key={key}
+            className="flex flex-row items-center justify-start mt-5"
           >
-            <img src={icon} alt={label} />
-          </div>
+            {/* Icon Section */}
+            <div className="flex justify-center align-middle mr-5">
+              <img src={icon} alt={label} />
+            </div>
 
-          {/* Content Section */}
-          <div className="flex flex-col w-full">
+            {/* Content Section */}
             <div
               className="card-content cursor-pointer flex flex-col"
               onClick={() => handleClick(key, contact[key])}
             >
-              <h2 className="card-title text-xl">{label}</h2>
+              <p className="text-sm font-normal text-gray">{label}</p>
               {editField === key ? (
                 <input
                   type="text"
@@ -129,25 +119,25 @@ const ContactCard = ({ user, allowEdit }) => {
                   autoFocus
                 />
               ) : (
-                <h2 className="card-subtitle mt-1">
+                <h2 className="mt-1 font-normal text-black">
                   {key === "instagram" ? "" : contact[key]}
                 </h2>
               )}
             </div>
-
-            {/* Edit Icon */}
-            {allowEdit && key !== "email" && (
-              <img
-                src={editIcon}
-                alt="Edit"
-                className="w-4 h-4 cursor-pointer absolute top-4 right-4"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setEditField(key);
-                }}
-              />
-            )}
           </div>
+
+          {/* Edit Icon */}
+          {allowEdit && key !== "email" && (
+            <img
+              src={editIcon}
+              alt="Edit"
+              className="cursor-pointer h-5 w-5 flex-shrink-0 ml-5"
+              onClick={(e) => {
+                e.stopPropagation();
+                setEditField(key);
+              }}
+            />
+          )}
         </div>
       ))}
     </div>

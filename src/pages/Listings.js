@@ -19,24 +19,30 @@ const Listings = () => {
 
   return (
     <div className="">
-      <div className="w-full flex flex-col justify-center items-center">
-        {listings.length > 0 ? listings.map((listing) => (
-          <React.Fragment key={listing.id}>
-            <div className="h-[0.5px] w-full border border-[#EAEAEA]"></div>
-            <Listing
-              id={listing.id}
-              broker={listing.broker_name}
-              selling_price={listing.selling_price}
-              sq_ft={listing.sq_ft}
-              locality={listing.locality}
-              type={listing.type}
-              onClick={() => {
-                navigate(`/profile/${listing.broker_id}`);
-              }}
-            />
-          </React.Fragment>
-        )) : <p>No listings found</p>}
-        {listings.length > 0 && <div className="h-[0.5px] w-full border border-[#EAEAEA]"></div>}
+      <div className="w-full flex flex-col justify-center items-center mt-7">
+        {listings.length > 0 ? (
+          listings.map((listing) => (
+            <React.Fragment key={listing.id}>
+              <Listing
+                id={listing.id}
+                broker={listing.broker_name}
+                selling_price={listing.selling_price}
+                sq_ft={listing.sq_ft}
+                locality={listing.locality}
+                type={listing.type}
+                onClick={() => {
+                  navigate(`/profile/${listing.broker_id}`);
+                }}
+              />
+                <div className="h-1 bg-[#F1F1F1] w-full my-5"></div>
+            </React.Fragment>
+          ))
+        ) : (
+          <p>No listings found</p>
+        )}
+        {/* {listings.length > 0 && (
+          <div className="h-1 bg-[#F1F1F1] w-full my-5"></div>
+        )} */}
       </div>
     </div>
   );
