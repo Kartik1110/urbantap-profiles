@@ -11,6 +11,9 @@ import ProfileV2 from "./pages/ProfileV2";
 import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
 import Contact from "./pages/Contact";
+import Tabs from "./components/Tabs";
+import Jobs from "./pages/Jobs"
+import BrokersPage from "./pages/Brokers"
 
 function App() {
   const location = useLocation();
@@ -20,7 +23,7 @@ function App() {
   return (
     <>
       <AuthProvider>
-        <Header />
+        {/* <Header /> */}
         <Routes>
           <Route path="/" element={<Listings />} />
           <Route path="/profile/:id" element={<ProfileV2 />} />
@@ -36,10 +39,10 @@ function App() {
           <Route path="/login" element={<Login />} /> */}
           {/* <Route path="/contact" element={<Contact />} /> */}
 
-          {/* <Route path="/home" element={<Listings />} /> */}
-          {/* <Route path="/brokers" element={<BrokersPage />} />
-          <Route path="/jobs" element={<Jobs />} /> */}
+          <Route path="/home" element={<Listings />} />
+          <Route path="/brokers" element={<BrokersPage />} />
           {/* <Route path="/listings" element={<Listings />} /> */}
+          <Route path="/jobs" element={<Jobs />} />
 
           {/* <Route path="/profile" element={<Profile user={VARUN_USER} profileImage={VarunProfilePic} />}/>
           <Route path="/profile/varun" element={<Profile user={VARUN_USER} profileImage={VarunProfilePic} />}/> 
@@ -50,9 +53,8 @@ function App() {
           <Route path="/profile/pritpal" element={<Profile user={PRITPAL_USER} profileImage={PritpalProfilePic} />}/>
            */}
         </Routes>
-        {/* {location.pathname !== "/register" &&
-          location.pathname !== "/login" && 
-          <Tabs />} */}
+        {location.pathname !== "/register" &&
+          location.pathname !== "/login" && <Tabs />}
       </AuthProvider>
     </>
   );
