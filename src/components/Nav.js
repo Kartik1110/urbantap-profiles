@@ -3,6 +3,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import Logo from "./ui/Logo";
 import SearchListing from "./SearchListing";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts/authContext";
 
 const NavLinkList = () => {
   return (
@@ -41,6 +42,7 @@ const NavLinkList = () => {
 };
 
 const Nav = () => {
+  const { currentUser, userLoggedIn } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation(); // Get the current route
   const navigate = useNavigate();
@@ -50,7 +52,15 @@ const Nav = () => {
   };
 
   const backToProfile = () => {
-    navigate(-1);
+    if (userLoggedIn) {
+      if (!currentUser?.data?.brokerId) {
+        navigate("/contact");
+      } else {
+        navigate(`/profile/${currentUser?.data?.brokerId}`);
+      }
+    } else {
+      navigate("/login");
+    }
   };
 
   return (
@@ -67,8 +77,8 @@ const Nav = () => {
           </div> */}
           {location.pathname.includes("/profile") && <Logo />}
           {(location.pathname === "/listings" || location.pathname === "/") && (
-            <button 
-              onClick={backToProfile} 
+            <button
+              onClick={backToProfile}
               className="w-[112px] h-[34px] bg-gradient-to-b from-[#4DD969] to-[#28CD56] rounded-[30px] text-center font-medium text-sm font-inter leading-[17px] text-black"
             >
               Back to profile
