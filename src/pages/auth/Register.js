@@ -74,7 +74,7 @@ function Register() {
             value={name}
             onChange={handleInputChange}
             required
-            className="box-border flex items-center px-5 py-4 w-[335px] h-[60px] bg-white border border-[#D8DADC] rounded-lg text-gray-500 text-sm"
+            className="box-border flex items-center px-5 py-4 w-full h-[60px] bg-white border border-[#D8DADC] rounded-lg text-gray-500 text-sm"
           />
           <input
             name="email"
@@ -83,7 +83,7 @@ function Register() {
             value={email}
             onChange={handleInputChange}
             required
-            className="box-border flex items-center px-5 py-4 w-[335px] h-[60px] bg-white border border-[#D8DADC] rounded-lg text-gray-500 text-sm"
+            className="box-border flex items-center px-5 py-4 w-full h-[60px] bg-white border border-[#D8DADC] rounded-lg text-gray-500 text-sm"
           />
           <input
             name="password"
@@ -92,7 +92,7 @@ function Register() {
             value={password}
             onChange={handleInputChange}
             required
-            className="box-border flex items-center px-5 py-4 w-[335px] h-[60px] bg-white border border-[#D8DADC] rounded-lg text-gray-500 text-sm"
+            className="box-border flex items-center px-5 py-4 w-full h-[60px] bg-white border border-[#D8DADC] rounded-lg text-gray-500 text-sm"
           />
           <input
             name="confirmPassword"
@@ -101,7 +101,7 @@ function Register() {
             value={confirmPassword}
             onChange={handleInputChange}
             required
-            className="box-border flex items-center px-5 py-4 w-[335px] h-[60px] bg-white border border-[#D8DADC] rounded-lg text-gray-500 text-sm"
+            className="box-border flex items-center px-5 py-4 w-full h-[60px] bg-white border border-[#D8DADC] rounded-lg text-gray-500 text-sm"
           />
           <button
             className="w-full h-14 bg-black flex justify-center items-center py-2 px-4 border border-transparent rounded-full shadow-sm text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"

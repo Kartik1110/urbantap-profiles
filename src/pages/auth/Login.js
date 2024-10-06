@@ -77,7 +77,7 @@ const Login = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="box-border flex items-center px-5 py-4 w-[335px] h-[60px] bg-white border border-[#D8DADC] rounded-lg text-gray-500 text-sm"
+              className="box-border flex items-center px-5 py-4 w-full h-[60px] bg-white border border-[#D8DADC] rounded-lg text-gray-500 text-sm"
             />
           </div>
 
@@ -89,7 +89,7 @@ const Login = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              className="box-border flex items-center px-5 py-4 w-[335px] h-[60px] bg-white border border-[#D8DADC] rounded-lg text-gray-500 text-sm"
+              className="box-border flex items-center px-5 py-4 w-full h-[60px] bg-white border border-[#D8DADC] rounded-lg text-gray-500 text-sm"
             />
             <div
               className="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer"
