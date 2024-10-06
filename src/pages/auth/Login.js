@@ -1,17 +1,21 @@
-import React, { useState } from "react";
-import "./Login.css";
-import { FaApple, FaFacebookF, FaGoogle, FaEye, FaEyeSlash } from "react-icons/fa";
+import React, { useEffect, useState } from "react";
+import {
+  FaApple,
+  FaFacebookF,
+  FaGoogle,
+  FaEye,
+  FaEyeSlash,
+} from "react-icons/fa";
 import Logo from "../../components/ui/Logo";
-import { doSignInWithEmailAndPassword, doSignInWithGoogle } from "../../firebase/auth";
 import { useAuth } from "../../contexts/authContext";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
-const App = () => {
-  const { userLoggedIn } = useAuth();
-
+const Login = () => {
+  const { login, userLoggedIn } = useAuth();
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
   const [isSigningIn, setIsSigningIn] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
@@ -19,38 +23,53 @@ const App = () => {
   const handleMouseDownPassword = (event) => event.preventDefault();
 
   const onSubmit = async (e) => {
+    console.log("signin", email, password);
     e.preventDefault();
+
     if (!isSigningIn) {
       setIsSigningIn(true);
       try {
-        await doSignInWithEmailAndPassword(email, password);
+        if (email && password) {
+          await login(email, password);
+          navigate("/");
+        } else {
+          toast.error("Enter email and password", {
+            position: "bottom-center",
+          });
+        }
       } catch (error) {
-        setError(error.message);
+        toast.error(error.message, { position: "bottom-center" });
       }
       setIsSigningIn(false);
     }
   };
 
-  const handleSignInWithGoogle = async () => {
-    if (!isSigningIn) {
-      setIsSigningIn(true);
-      try {
-        await doSignInWithGoogle();
-      } catch (error) {
-        setError(error.message);
-      }
-      setIsSigningIn(false);
+  // const handleSignInWithGoogle = async () => {
+  //   if (!isSigningIn) {
+  //     setIsSigningIn(true);
+  //     try {
+  //       // await doSignInWithGoogle();
+  //     } catch (error) {
+  //       setError(error.message);
+  //     }
+  //     setIsSigningIn(false);
+  //   }
+  // };
+  useEffect(() => {
+    if (userLoggedIn) {
+      navigate("/");
     }
-  };
+  }, []);
 
   return (
-    <div className="login">
-      {userLoggedIn && <Navigate to="/Home" replace={true} />}
-      <div className="login-container">
-        <Logo />
-        <form className="login-form" onSubmit={onSubmit}>
-          <div className="input-container">
-            <label htmlFor="email">Email address</label>
+    <div className="min-h-screen flex items-center justify-center bg-white">
+      <div className="w-[90%] max-w-md bg-white p-8">
+        <div className="flex flex-col justify-center items-center">
+          <Logo />
+          <h3 className="mt-4 font-medium text-2xl">Login</h3>
+        </div>
+        <form className="mt-6 space-y-6">
+          <div className="relative">
             <input
               id="email"
               type="email"
@@ -58,11 +77,11 @@ const App = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
+              className="box-border flex items-center px-5 py-4 w-[335px] h-[60px] bg-white border border-[#D8DADC] rounded-lg text-gray-500 text-sm"
             />
           </div>
 
-          <div className="input-container">
-            <label htmlFor="password">Enter Password</label>
+          <div className="relative">
             <input
               id="password"
               type={showPassword ? "text" : "password"}
@@ -70,65 +89,73 @@ const App = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
+              className="box-border flex items-center px-5 py-4 w-[335px] h-[60px] bg-white border border-[#D8DADC] rounded-lg text-gray-500 text-sm"
             />
             <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                position: "absolute",
-                right: "10px",
-                top: "70%",
-                transform: "translateY(-50%)",
-                cursor: "pointer",
-              }}
+              className="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer"
+              onClick={handleClickShowPassword}
+              onMouseDown={handleMouseDownPassword}
             >
-              <button
-                type="button"
-                onClick={handleClickShowPassword}
-                onMouseDown={handleMouseDownPassword}
-                className="show-password-button"
-              >
-                {showPassword ? <FaEyeSlash /> : <FaEye />}
-              </button>
+              {showPassword ? (
+                <FaEyeSlash className="text-gray-500" />
+              ) : (
+                <FaEye className="text-gray-500" />
+              )}
             </div>
           </div>
 
-          <div className="forgot-password">
-            <a href="/">Forgot Password?</a>
-          </div>
-
-          <button type="submit" className="login-button" disabled={isSigningIn}>
-            {isSigningIn ? "Signing in..." : "Sign in"}
-          </button>
-
-          {error && <p className="error">{error}</p>}
-        </form>
-        <div className="signup-link">
-          <p>
-            Don't have an account?
-            <a href="/register" className="signup-link" style={{ color: "blue" }}>
-              Sign up
+          {/* <div className="text-sm">
+            <a
+              href="/"
+              className="font-medium text-indigo-600 hover:text-indigo-500"
+            >
+              Forgot Password?
             </a>
+          </div> */}
+
+          <button
+            className="w-full h-14 bg-black flex justify-center items-center py-2 px-4 border border-transparent rounded-full shadow-sm text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            disabled={isSigningIn}
+            onClick={onSubmit}
+          >
+            {isSigningIn ? "Signing in..." : "Login"}
+          </button>
+        </form>
+
+        <div className="mt-6">
+          <p className="text-center text-sm text-gray-600">
+            Don't have an account?{" "}
+            <button
+              onClick={() => navigate("/register")}
+              className="font-medium text-indigo-600 hover:text-indigo-500"
+            >
+              Sign up
+            </button>
           </p>
         </div>
-        <div className="login-alternatives">
-          <p>Or Log in with</p>
-          <div className="social-login">
-            <button className="social-button" onClick={handleSignInWithGoogle}>
-              <FaGoogle />
+
+        {/* DO NOT REMOVE THE BELOW CODE */}
+
+        {/* <div className="mt-6">
+          <p className="text-center text-sm text-gray-600">Or log in with</p>
+          <div className="mt-3 flex justify-center space-x-3">
+            <button
+              className="bg-white p-2 border border-gray-300 rounded-full shadow-sm hover:bg-gray-100"
+              onClick={handleSignInWithGoogle}
+            >
+              <FaGoogle className="text-gray-600" />
             </button>
-            <button className="social-button">
-              <FaFacebookF />
+            <button className="bg-white p-2 border border-gray-300 rounded-full shadow-sm hover:bg-gray-100">
+              <FaFacebookF className="text-gray-600" />
             </button>
-            <button className="social-button">
-              <FaApple />
+            <button className="bg-white p-2 border border-gray-300 rounded-full shadow-sm hover:bg-gray-100">
+              <FaApple className="text-gray-600" />
             </button>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
 };
 
-export default App;
+export default Login;

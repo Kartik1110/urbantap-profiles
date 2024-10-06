@@ -26,14 +26,14 @@ const Listing = ({ id, broker, selling_price, sq_ft, locality, type, onClick }) 
             </div>
           </div>
           {/* Share Section */}
-          <div className="flex flex-row items-center p-0 gap-2 relative">
+          {/* <div className="flex flex-row items-center p-0 gap-2 relative">
             <div className="w-[40px] h-[18px]">
               <ShareIcon />
             </div>
             <span className="absolute left-[62.5%] right-0 top-0 bottom-0 text-[12px] leading-[18px] font-normal text-[#1D1D20]">
               36
             </span>
-          </div>
+          </div> */}
         </div>
 
         {/* Image */}
