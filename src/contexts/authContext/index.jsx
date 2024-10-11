@@ -23,8 +23,22 @@ export function AuthProvider({ children }) {
         password: password,
       });
 
+      const brokerData = await axios
+        .get(`${apiEndPoints.brokers}/${response.data.data.brokerId}`)
+        .then((res) => {
+          return res;
+        });
+
       // Assuming the API returns user data upon successful login
-      const user = response.data;
+      const user = {
+        data: {
+          ...response.data.data,
+          profile_pic: brokerData.data.data.broker.profile_pic,
+          name: brokerData.data.data.broker.name,
+        },
+        status: response.data.status,
+        message: response.data.message,
+      };
 
       // Set the current user and mark the user as logged in
       setCurrentUser(user);
