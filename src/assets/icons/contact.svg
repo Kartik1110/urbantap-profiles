@@ -1,13 +1,7 @@
-<svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_100_801)">
-<path d="M13.834 17.5V15.8333C13.834 14.9493 13.4828 14.1014 12.8577 13.4763C12.2326 12.8512 11.3847 12.5 10.5007 12.5H4.66732C3.78326 12.5 2.93542 12.8512 2.3103 13.4763C1.68517 14.1014 1.33398 14.9493 1.33398 15.8333V17.5" stroke="#0A1330" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M17.166 6.66675V11.6667" stroke="#0A1330" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M19.666 9.16675H14.666" stroke="#0A1330" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M7.58333 9.16667C9.42428 9.16667 10.9167 7.67428 10.9167 5.83333C10.9167 3.99238 9.42428 2.5 7.58333 2.5C5.74238 2.5 4.25 3.99238 4.25 5.83333C4.25 7.67428 5.74238 9.16667 7.58333 9.16667Z" stroke="#0A1330" stroke-linecap="round" stroke-linejoin="round"/>
-</g>
-<defs>
-<clipPath id="clip0_100_801">
-<rect width="20" height="20" fill="white" transform="translate(0.5)"/>
-</clipPath>
-</defs>
+<svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.5551 13.138C16.5466 13.138 18.9718 10.7129 18.9718 7.72135C18.9718 4.72981 16.5466 2.30469 13.5551 2.30469C10.5636 2.30469 8.13843 4.72981 8.13843 7.72135C8.13843 10.7129 10.5636 13.138 13.5551 13.138Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4.24927 23.9701C4.24927 19.7776 8.4201 16.3867 13.5551 16.3867C14.5951 16.3867 15.6026 16.5275 16.5451 16.7875" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M24.3885 19.6341C24.3885 19.9808 24.3451 20.3166 24.2585 20.6416C24.161 21.0749 23.9876 21.4974 23.7601 21.8658C23.0126 23.1224 21.6368 23.9674 20.0551 23.9674C18.9393 23.9674 17.9318 23.5449 17.1735 22.8516C16.8485 22.5699 16.5668 22.2341 16.3501 21.8658C15.9493 21.2158 15.7218 20.4466 15.7218 19.6341C15.7218 18.4641 16.1876 17.3916 16.946 16.6116C17.7368 15.7991 18.8418 15.3008 20.0551 15.3008C21.3335 15.3008 22.4926 15.8533 23.2726 16.7416C23.966 17.5108 24.3885 18.5291 24.3885 19.6341Z" stroke="#0DCB88" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M21.6692 19.6133H18.4409" stroke="#0DCB88" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M20.0553 18.0312V21.2704" stroke="#0DCB88" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
