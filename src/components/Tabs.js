@@ -33,7 +33,7 @@ const Tabs = () => {
       } else {
         const shareUrl = `whatsapp://send?text=Check out ${
           currentUser.data.name
-        }'s profile: ${encodeURIComponent(window.location.href)}`;
+        }'s profile: ${encodeURIComponent(window.location.href)} on Urbantap`;
         window.open(shareUrl, "_blank");
       }
     } else {
