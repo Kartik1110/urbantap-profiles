@@ -1,22 +1,19 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+import { useAuth } from "../contexts/authContext";
 import { apiEndPoints } from "../constants/apiEndPoints";
 
 import ProfileButton from "../components/ProfileButton";
 import ActionCard from "../components/ui/cards/ActionCard";
-import PropertyCardV2 from "../components/ui/cards/PropertyCardV2";
 import ContactCardV2 from "../components/ui/cards/ContactCardV2";
+import Listings from "./Listings";
+import DescriptionComponent from "../components/Description";
 
-import shareIcon from "../assets/icons/share.svg";
-import reraLogo from "../assets/icons/rera-certified.svg";
 import contact from "../assets/icons/contact.svg";
 import call from "../assets/icons/call.svg";
 import editIcon from "../assets/icons/edit.svg";
-import callBackIcon from "../assets/icons/callback.svg"
-import { useAuth } from "../contexts/authContext";
-import ButtonTabs from "../components/ButtonTabs";
-import Listings from "./Listings";
+import callBackIcon from "../assets/icons/callback.svg";
 
 const Profile = () => {
   const { currentUser, userLoggedIn } = useAuth();
@@ -26,12 +23,9 @@ const Profile = () => {
   const params = useParams();
   const navigate = useNavigate();
   const [user, setUser] = useState();
-  const [isExpanded, setIsExpanded] = useState(false);
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState("profile");
 
-  console.log("user", user);
-  // Add state to manage edit mode for multiple fields
   const [editYears, setEditYears] = useState(false);
   const [editDescription, setEditDescription] = useState(false);
   const [editLanguages, setEditLanguages] = useState(false);
@@ -45,11 +39,6 @@ const Profile = () => {
   // Function to handle field changes
   const handleYearsChange = (e) => setYearsOfExperience(e.target.value);
   const handleDescriptionChange = (e) => setDescription(e.target.value);
-  const handleLanguagesChange = (index, value) => {
-    const updatedLanguages = [...languages];
-    updatedLanguages[index] = value;
-    setLanguages(updatedLanguages);
-  };
 
   useEffect(() => {
     setLoading(true);
@@ -113,26 +102,6 @@ END:VCARD`;
     window.location.href = `tel:${user.broker.w_number}`;
   };
 
-  const renderLanguages = () => {
-    return (
-      user.broker &&
-      user.broker.languages &&
-      user.broker.languages.map((language, index) => (
-        <div
-          key={index}
-          className="tag-box px-4 py-2"
-          style={{
-            backgroundColor: "white",
-            borderRadius: "25px",
-            fontSize: "0.9rem",
-          }}
-        >
-          {language}
-        </div>
-      ))
-    );
-  };
-
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -142,29 +111,27 @@ END:VCARD`;
   }
 
   return (
-    <div className="mt-6 h-fit">
-      {/* pfp row */}
-
-      {/* 
-      <div className="flex flex-row mt-2 justify-between">
-        <div className="flex flex-col">
-          <h1 className="text-2xl font-bold">{user.broker.name}</h1>
-          <p className="text-md text-gray">{user.company.name}</p>
-        </div>
-
-        <img className="mr-2" src={reraLogo} alt="Rera Logo"></img>
-      </div> */}
-
+    <div className="mt-6 h-fit mb-[70px]">
       {allowEdit && (
-        <h3 className="px-7 pb-5 text-[16px] font-inter font-semibold">
+        <h3 className="px-7 text-[16px] font-inter font-semibold">
           My Profile
         </h3>
       )}
-      {!allowEdit && (
-        <h3 className="text-center px-7 pb-5 text-[16px] font-inter font-semibold">
-          Broker details
-        </h3>
-      )}
+      <div className="w-full flex items-center justify-between pb-5">
+        {!allowEdit && (
+          <h3 className="text-center px-7 text-[16px] font-inter font-semibold">
+            Broker details
+          </h3>
+        )}
+        {!userLoggedIn && (
+          <button
+            className="bg-primary p-2 rounded-xl text-sm font-medium float-right mr-7"
+            onClick={() => navigate("/login")}
+          >
+            Login to edit your profile
+          </button>
+        )}
+      </div>
 
       <div className="px-7 flex flex-col justify-start">
         <div className="flex justify-start items-center">
@@ -175,46 +142,38 @@ END:VCARD`;
             </h1>
             <p className="text-sm font-normal text-gray">{user.company.name}</p>
           </div>
-          {!userLoggedIn && (
-            <button
-              className="bg-primary p-2 rounded-xl text-sm font-medium float-right ml-7"
-              onClick={() => navigate("/login")}
-            >
-              Login to create
-              <br />
-              or edit your profile
-            </button>
-          )}
         </div>
 
         {/* CTA row */}
-        {!userLoggedIn && <div className="flex flex-row justify-center gap-3 mt-5 w-full">
-          <ActionCard
-            title="Save Contact"
-            image={contact}
-            direction="column"
-            cardStyling="py-4 px-5 justify-center gap-3 h-[100px]"
-            textContainerStyle="max-w-20 break-words text-center font-normal font-inter text-sm"
-            onClick={saveContactInfo}
-          />
-          <ActionCard
-            title="Call Now"
-            image={call}
-            direction="column"
-            cardStyling="py-4 px-10 justify-center gap-3 h-[100px]"
-            textContainerStyle="max-w-10 break-words text-center font-normal font-inter text-sm"
-            onClick={callNow}
-          />
-          <ActionCard
-            title="Request a callback"
-            image={callBackIcon}
-            direction="column"
-            cardStyling="py-4 px-5 justify-center gap-3 h-[100px]"
-            textContainerStyle="max-w-20 break-words text-center font-normal font-inter text-sm"
-            onClick={() => {}}
-            isDisabled={true}
-          />
-        </div>}
+        {!userLoggedIn && (
+          <div className="flex flex-row justify-center gap-3 mt-5 w-full">
+            <ActionCard
+              title="Save Contact"
+              image={contact}
+              direction="column"
+              cardStyling="py-4 px-5 justify-center gap-3 h-[100px]"
+              textContainerStyle="max-w-20 break-words text-center font-normal font-inter text-sm"
+              onClick={saveContactInfo}
+            />
+            <ActionCard
+              title="Call Now"
+              image={call}
+              direction="column"
+              cardStyling="py-4 px-10 justify-center gap-3 h-[100px]"
+              textContainerStyle="max-w-10 break-words text-center font-normal font-inter text-sm"
+              onClick={callNow}
+            />
+            <ActionCard
+              title="Request a callback"
+              image={callBackIcon}
+              direction="column"
+              cardStyling="py-4 px-5 justify-center gap-3 h-[100px]"
+              textContainerStyle="max-w-20 break-words text-center font-normal font-inter text-sm"
+              onClick={() => {}}
+              isDisabled={true}
+            />
+          </div>
+        )}
       </div>
 
       {/* Divider */}
@@ -263,7 +222,6 @@ END:VCARD`;
           <div className="h-1 bg-[#F1F1F1] w-full my-5"></div>
 
           {/* Profile Info */}
-          {/* Description */}
           <div className="mt-5 relative px-7">
             <div className="flex justify-between items-center">
               <h2 className="text-[16px] font-inter font-semibold">
@@ -278,47 +236,14 @@ END:VCARD`;
                 />
               )}
             </div>
-            <div
-              className={`card ${isExpanded ? "expanded" : "collapsed"} pt-2`}
-            >
-              {editDescription ? (
-                <textarea
-                  value={description}
-                  onChange={handleDescriptionChange}
-                  className=""
-                  onBlur={() => {
-                    setEditDescription(false);
-                    updateBrokerField("info", description);
-                  }}
-                />
-              ) : (
-                <>
-                  {isExpanded ? (
-                    <div className="font-normal font-inter text-sm">
-                      {description}
-                      <br />
-                      <button
-                        className="font-semibold font-inter mt-2 text-sm"
-                        onClick={() => setIsExpanded(false)}
-                      >
-                        Read Less
-                      </button>
-                    </div>
-                  ) : (
-                    <div className="font-normal font-inter text-sm">
-                      {`${description.substring(0, 86)}...`}
-                      <br />
-                      <button
-                        className="font-semibold font-inter mt-2 text-sm"
-                        onClick={() => setIsExpanded(true)}
-                      >
-                        Read More
-                      </button>
-                    </div>
-                  )}
-                </>
-              )}
-            </div>
+            {/* Description */}
+            <DescriptionComponent
+              description={description}
+              editDescription={editDescription}
+              setEditDescription={setEditDescription}
+              handleDescriptionChange={handleDescriptionChange}
+              updateBrokerField={updateBrokerField}
+            />
           </div>
         </>
       )}
